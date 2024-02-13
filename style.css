@@ -1,0 +1,31 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: red;
+}
+
+main {
+    display: flexbox;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    margin: 96px;
+    gap: 16px;
+}
+
+main > * {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+section {
+    width: auto;
+    height: 100%;
+    border: 8px green solid;
+}
