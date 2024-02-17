@@ -1,11 +1,13 @@
 let timeout;
-let gridNumber = 32;
+let gridNumber = 16;
 let divBackgroundColor = "#e7e7e7";
 let hoverColor;
 let switchValue = "OFF";
 
 const colorSwitch = document.querySelector("#color-switch");
 const resetBtn = document.querySelector("#reset");
+const changeGridBtn = document.querySelector("#change-grid-size");
+const currentGrid = document.querySelector("#current-grid-size");
 
 
 window.addEventListener("load", () => {
@@ -41,7 +43,9 @@ let createGrid = (gridNumber) => {
         div.style.width = 100 / gridNumber + "%";
         div.style.height = div.style.width;
         grid.appendChild(div);
-    }
+    };
+
+    currentGrid.textContent = `${gridNumber}x${gridNumber}`;
 };
 
 let updateGridSize = () => {
@@ -62,10 +66,34 @@ colorSwitch.addEventListener("change", () => {
 });
 
 resetBtn.addEventListener("click", () => {
-    createGrid(32);
+    createGrid(16);
     colorSwitch.checked = false;
     switchValue = colorSwitch.checked ? "ON" : "OFF";
     checkColorValue(switchValue);
+});
+
+changeGridBtn.addEventListener("click", () => {
+    let userInput;
+    let isValidNumber = false;
+
+    while (!isValidNumber) {
+        userInput = prompt("Choose a number between 1 and 100: ");
+        userInput = Number(userInput);
+
+        if (userInput === null) {
+            console.log("Operation cancelled.");
+            break;
+        } else if (!isNaN(userInput) && userInput >= 1 && userInput <= 100) {
+            isValidNumber = true;
+            gridNumber = userInput;
+            createGrid(gridNumber);
+            console.log(`Number is within range: ${userInput}`);
+        } else {
+            alert("Number is out of the range. Valid range: 1 - 100.");
+            break;
+        }
+    }
+    console.log(`Final user input type: ${typeof userInput}`);
 });
 
 let getRandomColor = () => {
