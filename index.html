@@ -19,18 +19,22 @@
             <div id="settings-heading">
                 <p>Settings</p>
             </div>
-            <div id="grid-size">
+            <div id="current-grid-size">
                 <p>64x64</p>
             </div>
         </section>
         <section id="etch-a-sketch">
             <div id="settings">
                 <div id="random-color">
-                    <p>Random color:</p>
+                    <p>Color:</p>
                     <label class="switch">
                         <input type="checkbox" id="color-switch">
                         <span class="slider round"></span>
                     </label>
+                </div>
+                <div id="grid-size">
+                    <p>Grid:</p>
+                    <button id="change-grid-size">Change grid</button>
                 </div>
                 <button id="reset">Reset</button>
             </div>

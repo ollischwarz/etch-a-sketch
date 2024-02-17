@@ -5,6 +5,7 @@ let hoverColor;
 let switchValue = "OFF";
 
 const colorSwitch = document.querySelector("#color-switch");
+const resetBtn = document.querySelector("#reset");
 
 
 window.addEventListener("load", () => {
@@ -58,6 +59,13 @@ grid.addEventListener("mouseover", (event) => {
 colorSwitch.addEventListener("change", () => {
     switchValue = colorSwitch.checked ? "ON" : "OFF";
     console.log(switchValue);
+});
+
+resetBtn.addEventListener("click", () => {
+    createGrid(32);
+    colorSwitch.checked = false;
+    switchValue = colorSwitch.checked ? "ON" : "OFF";
+    checkColorValue(switchValue);
 });
 
 let getRandomColor = () => {
