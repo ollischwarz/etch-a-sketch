@@ -1,6 +1,6 @@
 let timeout;
 let gridNumber = 16;
-let divBackgroundColor = "#e7e7e7";
+let divBackgroundColor = "#F3F7FB";
 let hoverColor;
 let switchValue = "OFF";
 
@@ -8,11 +8,13 @@ const colorSwitch = document.querySelector("#color-switch");
 const resetBtn = document.querySelector("#reset");
 const changeGridBtn = document.querySelector("#change-grid-size");
 const currentGrid = document.querySelector("#current-grid-size");
+const colorMode = document.querySelector("#color-mode-p");
 
 
 window.addEventListener("load", () => {
     createGrid(gridNumber);
     checkColorValue(switchValue);
+    colorMode.textContent = switchValue;
 });
 
 window.addEventListener("resize", () => {
@@ -62,6 +64,7 @@ grid.addEventListener("mouseover", (event) => {
 
 colorSwitch.addEventListener("change", () => {
     switchValue = colorSwitch.checked ? "ON" : "OFF";
+    colorMode.textContent = switchValue;
     console.log(switchValue);
 });
 

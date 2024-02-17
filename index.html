@@ -16,24 +16,32 @@
     </header>
     <main>
         <section id="top">
-            <div id="settings-heading">
-                <p>Settings</p>
+            <div id="grid-heading">
+                <p>Grid:</p>
             </div>
             <div id="current-grid-size">
-                <p>64x64</p>
+                <p></p>
             </div>
         </section>
         <section id="etch-a-sketch">
             <div id="settings">
-                <div id="random-color">
-                    <p>Color:</p>
-                    <label class="switch">
-                        <input type="checkbox" id="color-switch">
-                        <span class="slider round"></span>
-                    </label>
+                <p>Settings:</p>
+                <div id="color-settings">
+                    <p>Color</p>
+                    <!-- <input type="color" id="colorpicker" value="#0000ff"> -->
+                    <div>
+                        <label class="switch">
+                            <input type="checkbox" id="color-switch">
+                            <span class="slider round"></span>
+                        </label>
+                        <div id="color-mode">
+                            <p>random:</p>
+                            <p id="color-mode-p"></p>
+                        </div>
+                    </div>
                 </div>
-                <div id="grid-size">
-                    <p>Grid:</p>
+                <div id="grid-settings">
+                    <p>Grid</p>
                     <button id="change-grid-size">change size</button>
                 </div>
                 <button id="reset">Reset</button>

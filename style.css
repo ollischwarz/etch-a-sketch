@@ -7,12 +7,13 @@
     padding: 0;
 
     font-family: "Rubik Mono One", monospace, sans-serif;
+    color: #E4EBF5;
     background-color: #272F44;
     overflow: hidden;
 }
 
 h1 {
-    color: red;
+    color: #5A79B6;
 }
 
 body {
@@ -51,22 +52,19 @@ main>* {
 
 section {
     width: 100%;
-    border: 2px green solid;
+    border: 2px #3B496D solid;
+    border-radius: 2px;
+    padding: 2px;
 }
 
 #etch-a-sketch {
     display: flex;
     flex-direction: row;
-
-    gap: 16px;
 }
 
-#etch-a-sketch>* {
-    border: 2px red solid;
-}
-
-#settings {
-    width: 100px;
+#color > p:first-child,
+#grid-size > p:first-child {
+    padding-bottom: 8px;
 }
 
 #grid {
@@ -87,14 +85,50 @@ section {
 #settings {
     display: flex;
     flex-direction: column;
-    justify-content: space-between
+    justify-content: start;
+    align-items: stretch;
+
+    padding: 8px;
+
+    gap: 24px;
+
+    width: auto;
+}
+
+#settings>p {
+    font-size: large;
+}
+
+button {
+display: flex;
+justify-content: center;
+align-items: center;
+flex-wrap: wrap;
+box-sizing: border-box;
+
+background-color: #F3F7FB;
+color: #5A79B6;
+
+border:  none;
+border-radius: 4px;
+
+padding: 4px;
+
+height: 40px;
+width: 100%;
+cursor: pointer;
+}
+
+#reset {
+    background-color: #b0b0b0;
+    color: #4f4f4f;
 }
 
 .switch {
     position: relative;
     display: inline-block;
     width: 60px;
-    height: 34px;
+    height: 30px;
 }
 
 .switch input {
@@ -118,8 +152,8 @@ section {
 .slider:before {
     position: absolute;
     content: "";
-    height: 26px;
-    width: 26px;
+    height: 22px;
+    width: 22px;
     left: 4px;
     bottom: 4px;
     background-color: white;
@@ -128,7 +162,7 @@ section {
 }
 
 input:checked+.slider {
-    background-color: #2196F3;
+    background-color: #5A79B6;
 }
 
 /* input:focus+.slider {
@@ -138,7 +172,7 @@ input:checked+.slider {
 input:checked+.slider:before {
     -webkit-transform: translateX(26px);
     -ms-transform: translateX(26px);
-    transform: translateX(26px);
+    transform: translateX(30px);
 }
 
 /* Rounded sliders */
@@ -148,4 +182,22 @@ input:checked+.slider:before {
 
 .slider.round:before {
     border-radius: 50%;
+}
+
+#color-settings,
+#grid-settings {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+#grid-settings {
+    margin-bottom: auto;
+}
+
+#color-mode {
+    display: flex;
+    flex-direction: row;
+    font-size: 10px;
+    font-weight: 200;
 }
