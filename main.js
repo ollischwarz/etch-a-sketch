@@ -9,12 +9,15 @@ const resetBtn = document.querySelector("#reset");
 const changeGridBtn = document.querySelector("#change-grid-size");
 const currentGrid = document.querySelector("#current-grid-size");
 const colorMode = document.querySelector("#color-mode-p");
+const colorPicker = document.querySelector("#color-picker");
 
 
 window.addEventListener("load", () => {
     createGrid(gridNumber);
+    hoverColor = colorPicker.value;
     checkColorValue(switchValue);
     colorMode.textContent = switchValue;
+    console.log(hoverColor);
 });
 
 window.addEventListener("resize", () => {
@@ -24,7 +27,7 @@ window.addEventListener("resize", () => {
 
 let checkColorValue = (switchValue) => {
     if (switchValue === "OFF") {
-        hoverColor = "#4F4F4F"
+        hoverColor = colorPicker.value
     } else {
         hoverColor = getRandomColor();
     }
@@ -66,6 +69,18 @@ colorSwitch.addEventListener("change", () => {
     switchValue = colorSwitch.checked ? "ON" : "OFF";
     colorMode.textContent = switchValue;
     console.log(switchValue);
+});
+
+colorPicker.addEventListener("change", () => {
+    if (colorSwitch.checked = true) {
+        hoverColor = colorPicker.value;
+        colorSwitch.checked = false;
+        switchValue = colorSwitch.checked ? "ON" : "OFF";
+        colorMode.textContent = switchValue;
+    } else {
+        hoverColor = colorPicker.value;
+    }
+    return hoverColor;
 });
 
 resetBtn.addEventListener("click", () => {
